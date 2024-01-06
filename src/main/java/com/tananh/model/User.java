@@ -43,7 +43,8 @@ public class User {
 	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
 	private List<Rating> rating = new ArrayList<>();
 
-	
+//	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+//	private List<Order> order = new ArrayList<>();
 	
 	public User() {
 		

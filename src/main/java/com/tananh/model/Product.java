@@ -58,8 +58,12 @@ public class Product {
 	@OneToMany(mappedBy = "product", cascade= CascadeType.ALL)
 	private List<Rating> rating = new ArrayList<>();
 	
+//	@OneToMany(mappedBy = "product",cascade = CascadeType.ALL)
+//	private List<orderItem> orderItem = new ArrayList<>();
+	
 	@Column(name="num_rating")
 	private int numRating;
+	
 	
 	private Date createAt;
 
@@ -69,6 +73,7 @@ public class Product {
 		// TODO Auto-generated constructor stub
 	}
 
+	
 
 
 	public Product(Long id, String imgUrl, String brand, String title, Long discountedPrice, Long price,
