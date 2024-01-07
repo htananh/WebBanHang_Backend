@@ -9,6 +9,7 @@ import com.tananh.exception.CartItemException;
 import com.tananh.exception.UserException;
 import com.tananh.model.Cart;
 import com.tananh.model.CartItem;
+import com.tananh.model.Product;
 import com.tananh.model.User;
 import com.tananh.responsitory.CartItemResponsitory;
 
@@ -68,8 +69,8 @@ public class CartItemServiceImplementation implements CartItemService{
 	}
 
 	@Override
-	public CartItem isCartItemExist(Long userId, Long cartItemId, Cart card, String Capacity) {
-		CartItem cartItem = cartItemResponsitory.isCartItemExist(userId, card, Capacity, cartItemId);
+	public CartItem isCartItemExist(Long userId, Product product, Cart card, String Capacity) {
+		CartItem cartItem = cartItemResponsitory.isCartItemExist(userId, card, Capacity, product);
 		return cartItem;
 	}
 

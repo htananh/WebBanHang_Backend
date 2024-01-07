@@ -19,6 +19,7 @@ public class CartItem {
 	@OneToMany
 	private Product product;
 	
+	private String color;
 	private String Capacity;
 	
 	private Long discountedPrice;
@@ -34,17 +35,46 @@ public class CartItem {
 	
 
 
-	public CartItem(Long id, Cart cart, Product product, String capacity, Long discountedPrice, int quantity,
-			Long userId) {
+
+
+
+
+	public CartItem(Long id, Cart cart, Product product, String color, String capacity, Long discountedPrice,
+			int quantity, Long userId) {
 		super();
 		this.id = id;
 		this.cart = cart;
 		this.product = product;
+		this.color = color;
 		Capacity = capacity;
 		this.discountedPrice = discountedPrice;
 		this.quantity = quantity;
 		this.userId = userId;
 	}
+
+
+
+
+
+
+
+	public String getColor() {
+		return color;
+	}
+
+
+
+
+
+
+
+	public void setColor(String color) {
+		this.color = color;
+	}
+
+
+
+
 
 
 
