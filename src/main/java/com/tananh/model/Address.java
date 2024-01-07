@@ -15,8 +15,7 @@ public class Address {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long Id;
 	
-	private String firstName;
-	private String lastName;
+	private String fullName;
 	private String provinces;
 	private String district;
 	private String ward;
@@ -35,18 +34,26 @@ public class Address {
 
 
 
-	public Address(Long id, String firstName, String lastName, String provinces, String district, String ward,
-			String streetAddress, String moblie) {
+
+
+
+
+	public Address(Long id, String fullName, String provinces, String district, String ward, String streetAddress,
+			String moblie, User user) {
 		super();
 		Id = id;
-		this.firstName = firstName;
-		this.lastName = lastName;
+		this.fullName = fullName;
 		this.provinces = provinces;
 		this.district = district;
 		this.ward = ward;
 		this.streetAddress = streetAddress;
 		this.moblie = moblie;
+		this.user = user;
 	}
+
+
+
+
 
 
 
@@ -62,27 +69,26 @@ public class Address {
 
 
 
-	public String getFirstName() {
-		return firstName;
+	
+
+
+	public String getFullName() {
+		return fullName;
 	}
 
 
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+
+
+
+
+	public void setFullName(String fullName) {
+		this.fullName = fullName;
 	}
 
 
 
-	public String getLastName() {
-		return lastName;
-	}
 
-
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
 
 
 
