@@ -7,6 +7,7 @@ import java.util.*;
 import javax.crypto.SecretKey;
 
 import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
 
@@ -29,11 +30,19 @@ public class JwtProvider {
 				
 		return token;
 	}
-	public String getEmailFromToken(String jwt)
-	{
-		jwt.substring(7);
-		Claims claims = Jwts.parserBuilder().setSigningKey(key).build().parseClaimsJwt(jwt).getBody();
-		String email = String.valueOf(claims.get("email"));
-        return email;
+//	public String getEmailFromToken(String jwt)
+//	{
+//		jwt = jwt.substring(7); 
+//		Claims claims = Jwts.parserBuilder().setSigningKey(key).build().parseClaimsJwt(jwt).getBody();
+//		String email = String.valueOf(claims.get("email"));
+//        return email;
+//	}
+	public String getEmailFromToken(String jwt) {
+	    jwt = jwt.substring(7); // Gán kết quả của substring(7) vào biến jwt
+	    Jws<Claims> claimsJws = Jwts.parserBuilder().setSigningKey(key).build().parseClaimsJws(jwt);
+	    Claims claims = claimsJws.getBody();
+	    String email = String.valueOf(claims.get("email"));
+	    return email;
 	}
+
 }
